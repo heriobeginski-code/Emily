@@ -1,0 +1,103 @@
+Below is a clean way to structure it in HTML: use a weekly table, keep the locked blocks as fixed cells, and style writing/deep-work blocks differently.
+
+### Base HTML
+```html
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weekly Schedule</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 24px; background:#f7f7f7; }
+    h1 { margin-bottom: 12px; }
+    .schedule { width: 100%; border-collapse: collapse; background: #fff; }
+    .schedule th, .schedule td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      vertical-align: top;
+      text-align: left;
+    }
+    .schedule th { background: #222; color: #fff; }
+    .locked { background: #f0f0f0; font-weight: 600; }
+    .writing { background: #fff3c4; }
+    .deepwork { background: #d9ecff; }
+    .rest { background: #eef7ee; }
+    .workout { background: #ffd9d9; }
+  </style>
+</head>
+<body>
+  <h1>Weekly Schedule</h1>
+
+  <table class="schedule">
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>4:30 AM – 6:30 AM</th>
+        <th>7:00 AM – 1:00 PM</th>
+        <th>1:00 PM – 5:00 PM</th>
+        <th>5:00 PM – 6:00 PM</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mon</td>
+        <td class="workout">10K Run (4:30–6:20)</td>
+        <td>Personal Dev</td>
+        <td>Study Session (2–5)</td>
+        <td class="rest">Relax / Transition</td>
+      </tr>
+      <tr>
+        <td>Tue</td>
+        <td class="workout">Gym Warm-up (4:30–5:15)</td>
+        <td>Riding / Stable</td>
+        <td class="deepwork">Deep Work (1:30–5:00)</td>
+        <td class="rest">Buffer / Relax</td>
+      </tr>
+      <tr>
+        <td>Wed</td>
+        <td class="workout">5K Run (4:30–5:15)</td>
+        <td>Riding / Stable</td>
+        <td class="deepwork">Deep Work (1:30–5:00)</td>
+        <td class="workout">Gym Training (5–6)</td>
+      </tr>
+      <tr>
+        <td>Thu</td>
+        <td class="workout">Gym Session (4:30–6:30)</td>
+        <td>Deep Work / Sunbath</td>
+        <td>Study Session (2–5)</td>
+        <td class="workout">Training (18:30–19:30)</td>
+      </tr>
+      <tr>
+        <td>Fri</td>
+        <td class="workout">5K/10K Run (4:30–5:15)</td>
+        <td class="writing">Deep Work (8–12)</td>
+        <td>Riding (1 PM) / Stable</td>
+        <td class="rest">Relax / Transition</td>
+      </tr>
+      <tr>
+        <td>Sat</td>
+        <td class="locked">REST</td>
+        <td>Study / Notebook LM</td>
+        <td>Study / Light Business</td>
+        <td class="rest">Rest</td>
+      </tr>
+      <tr>
+        <td>Sun</td>
+        <td class="workout">Gym Session (4:30–6:30)</td>
+        <td>Study / Deep Work</td>
+        <td>Lunch / Deep Work</td>
+        <td class="workout">Beach Training (5–6)</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
+```
+
+### Preview
+- A 7-row weekly table
+- Locked workout blocks in red
+- Writing blocks in yellow
+- Deep work blocks in blue
+- Rest blocks in green
