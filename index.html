@@ -1,48 +1,99 @@
-Here's a clean, ready-to-use HTML table for your weekly schedule.
+Here is the base HTML for your schedule using a `<table>` element. The `<thead>` contains the time-block headers, and each `<tr>` in the `<tbody>` represents a day of the week.
 
+### Preview
+
+| Day | 4:30 AM – 6:30 AM | 7:00 AM – 1:00 PM | 1:00 PM – 5:00 PM | 5:00 PM – 6:00 PM |
+| :-- | :--- | :--- | :--- | :--- |
+| Mon | 10K Run (4:30–6:20) | Personal Dev | Study Session (2-5) | Relax / Transition |
+| Tue | Gym Warm-up (4:30–5:15)| Riding/Stable | Deep Work (1:30–5:00)| Buffer / Relax |
+| Wed | 5K Run (4:30–5:15) | Riding/Stable | Deep Work (1:30–5:00)| Gym Training (5-6) |
+| Thu | Gym Session (4:30–6:30)| Deep Work / Sunbath | Study Session (2-5) | Training (18:30-19:30) |
+| Fri | 5K/10K Run (4:30–5:15)| Deep Work (8–12) | Riding (1 PM) / Stable | Relax / Transition |
+| Sat | REST | Study / Notebook LM | Study / Light Business | Rest |
+| Sun | Gym Session (4:30–6:30)| Study / Deep Work | Lunch / Deep Work | Beach Training (5-6) |
+
+***
+
+### Base HTML Code
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weekly Schedule</title>
-<style>
-  body { font-family: Arial, sans-serif; margin: 20px; background: #f4f4f4; }
-  h1 { text-align: center; color: #333; }
-  table { border-collapse: collapse; width: 100%; background: #fff; }
-  th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
-  th { background: #2c3e50; color: #fff; }
-  td:first-child { font-weight: bold; background: #ecf0f1; }
-  .workout { background: #ffe8d6; }
-  .writing { background: #d6f5e0; }
-  tr:nth-child(even) td:not(:first-child) { background: #fafafa; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Schedule</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+    </style>
 </head>
 <body>
-  <h1>Weekly Schedule</h1>
-  <table>
+
+<h1>Weekly Schedule</h1>
+
+<table>
     <thead>
-      <tr>
-        <th>Day</th>
-        <th>4:30–6:30 AM (Workout)</th>
-        <th>7:00 AM–1:00 PM</th>
-        <th>1:00–5:00 PM</th>
-        <th>5:00–6:00 PM</th>
-      </tr>
+        <tr>
+            <th>Day</th>
+            <th>4:30 AM &ndash; 6:30 AM</th>
+            <th>7:00 AM &ndash; 1:00 PM</th>
+            <th>1:00 PM &ndash; 5:00 PM</th>
+            <th>5:00 PM &ndash; 6:00 PM</th>
+        </tr>
     </thead>
     <tbody>
-      <tr><td>Mon</td><td class="workout">10K Run (4:30–6:20)</td><td>Personal Dev</td><td>Study Session (2–5)</td><td>Relax / Transition</td></tr>
-      <tr><td>Tue</td><td class="workout">Gym Warm-up (4:30–5:15)</td><td>Riding / Stable</td><td class="writing">Deep Work (1:30–5:00)</td><td>Buffer / Relax</td></tr>
-      <tr><td>Wed</td><td class="workout">5K Run (4:30–5:15)</td><td>Riding / Stable</td><td class="writing">Deep Work (1:30–5:00)</td><td>Gym Training (5–6)</td></tr>
-      <tr><td>Thu</td><td class="workout">Gym Session (4:30–6:30)</td><td>Deep Work / Sunbath</td><td>Study Session (2–5)</td><td>Training (18:30–19:30)</td></tr>
-      <tr><td>Fri</td><td class="workout">5K/10K Run (4:30–5:15)</td><td class="writing">Deep Work (8–12)</td><td>Riding (1 PM) / Stable</td><td>Relax / Transition</td></tr>
-      <tr><td>Sat</td><td class="workout">REST</td><td>Study / NotebookLM</td><td>Study / Light Business</td><td>Rest</td></tr>
-      <tr><td>Sun</td><td class="workout">Gym Session (4:30–6:30)</td><td>Study / Deep Work</td><td>Lunch / Deep Work</td><td>Beach Training (5–6)</td></tr>
+        <tr>
+            <td>Mon</td>
+            <td>10K Run (4:30&ndash;6:20)</td>
+            <td>Personal Dev</td>
+            <td>Study Session (2-5)</td>
+            <td>Relax / Transition</td>
+        </tr>
+        <tr>
+            <td>Tue</td>
+            <td>Gym Warm-up (4:30&ndash;5:15)</td>
+            <td>Riding/Stable</td>
+            <td>Deep Work (1:30&ndash;5:00)</td>
+            <td>Buffer / Relax</td>
+        </tr>
+        <tr>
+            <td>Wed</td>
+            <td>5K Run (4:30&ndash;5:15)</td>
+            <td>Riding/Stable</td>
+            <td>Deep Work (1:30&ndash;5:00)</td>
+            <td>Gym Training (5-6)</td>
+        </tr>
+        <tr>
+            <td>Thu</td>
+            <td>Gym Session (4:30&ndash;6:30)</td>
+            <td>Deep Work / Sunbath</td>
+            <td>Study Session (2-5)</td>
+            <td>Training (18:30-19:30)</td>
+        </tr>
+        <tr>
+            <td>Fri</td>
+            <td>5K/10K Run (4:30&ndash;5:15)</td>
+            <td>Deep Work (8&ndash;12)</td>
+            <td>Riding (1 PM) / Stable</td>
+            <td>Relax / Transition</td>
+        </tr>
+        <tr>
+            <td>Sat</td>
+            <td>REST</td>
+            <td>Study / Notebook LM</td>
+            <td>Study / Light Business</td>
+            <td>Rest</td>
+        </tr>
+        <tr>
+            <td>Sun</td>
+            <td>Gym Session (4:30&ndash;6:30)</td>
+            <td>Study / Deep Work</td>
+            <td>Lunch / Deep Work</td>
+            <td>Beach Training (5-6)</td>
+        </tr>
     </tbody>
-  </table>
+</table>
+
 </body>
 </html>
-```
-
-**Preview description:** A centered "Weekly Schedule" title over a table. Dark blue headers, days in a gray bold left column, workout cells shaded orange, and writing sessions shaded green for quick scanning.
